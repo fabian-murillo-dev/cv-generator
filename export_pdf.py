@@ -18,6 +18,12 @@ import sys
 import re
 from pathlib import Path
 
+try:
+    import yaml
+except ImportError:
+    print("PyYAML is required. Install it with: pip install pyyaml")
+    sys.exit(1)
+
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
 
@@ -193,7 +199,41 @@ def build_pdf(blocks: list) -> CVPDF:
     return pdf
 
 
-def export_role(role_name: str, output_dir: Path):
+def print_feedback(role_config: dict):
+    """Print position feedback summary from the role config."""
+    match = role_config.get("match")
+    feedback = role_config.get("feedback")
+    strong = role_config.get("strong_points", [])
+    weak = role_config.get("weak_points", [])
+    review = role_config.get("review_notes", [])
+
+    if not any([match, feedback, strong, weak, review]):
+        return
+
+    print()
+    print("--- Position Feedback ---")
+    if match is not None:
+        print(f"  Match:    {match}%")
+    if feedback:
+        print(f"  Summary:  {feedback}")
+    if strong:
+        print("  Strong points:")
+        for s in strong:
+            print(f"    + {s}")
+    if weak:
+        print("  Weak points:")
+        for w in weak:
+            print(f"    - {w}")
+    if review:
+        print("  To review:")
+        for r in review:
+            print(f"    * {r}")
+
+
+def export_role(role_name: str, cv_dir: Path):
+    output_dir = cv_dir / "output"
+    roles_dir = cv_dir / "roles"
+
     # Try _clean version first, fall back to regular
     clean_path = output_dir / f"cv_{role_name}_clean.md"
     regular_path = output_dir / f"cv_{role_name}.md"
@@ -217,6 +257,13 @@ def export_role(role_name: str, output_dir: Path):
     print(f"PDF exported: {pdf_path}")
     print(f"    Source:   {md_path.name}")
     print(f"    Size:     {pdf_path.stat().st_size / 1024:.0f} KB")
+
+    # Print feedback from role config if available
+    role_path = roles_dir / f"{role_name}.yaml"
+    if role_path.exists():
+        role_config = yaml.safe_load(role_path.read_text())
+        print_feedback(role_config)
+
     return True
 
 
@@ -226,7 +273,6 @@ def main():
         sys.exit(1)
 
     cv_dir, args = get_cv_dir(sys.argv[1:])
-    output_dir = cv_dir / "output"
 
     if not cv_dir.exists():
         print(f"Error: CV directory '{cv_dir}' does not exist")
@@ -237,6 +283,7 @@ def main():
         sys.exit(1)
 
     if args[0] == "--all":
+        output_dir = cv_dir / "output"
         md_files = sorted(output_dir.glob("cv_*_clean.md"))
         if not md_files:
             md_files = sorted(output_dir.glob("cv_*.md"))
@@ -245,11 +292,11 @@ def main():
             sys.exit(1)
         for f in md_files:
             name = f.stem.replace("cv_", "").replace("_clean", "")
-            export_role(name, output_dir)
+            export_role(name, cv_dir)
             print()
         return
 
-    export_role(args[0], output_dir)
+    export_role(args[0], cv_dir)
 
 
 if __name__ == "__main__":

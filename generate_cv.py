@@ -224,7 +224,12 @@ def update_positions_tracker(cv_dir: Path, role_name: str, role_config: dict):
         print(f"Tracker:   entry already exists for {role_name}")
         return
 
-    match = role_config.get("match", "—")
+    match_raw = role_config.get("match", "—")
+    if match_raw != "—":
+        match_str = str(match_raw).rstrip("%")
+        match = f"{match_str}%"
+    else:
+        match = "—"
     source = role_config.get("source", "—")
     row = f"| {today} | {company} | {position} | {description} | {source} | [ ] | [ ] | [ ] | [{role_name}]({cv_path}) | {match} |\n"
     with open(tracker_path, "a") as f:

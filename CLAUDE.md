@@ -30,8 +30,12 @@ Once the base CV is in place and a position is provided:
   - `description`: A very short description of the position
   - `source`: Where the job posting was found (e.g., LinkedIn, Indeed, Craigslist, company website). Always ask the user. If the job description hints at a platform, confirm with the user rather than assuming.
   - `role`, `summary`, `include_tags`, `extra_skills`, `ats_keywords`: As described in "How It Works" below
+  - `feedback`: General assessment of position fit
+  - `strong_points`: List of candidate strengths relative to the position
+  - `weak_points`: List of gaps or weaknesses relative to the position
+  - `review_notes`: Actionable suggestions for improving the application
 - Run `generate_cv.py --cv-dir CVs/<PersonName> <role_name>` to produce the tailored CV (this also adds an entry to `positions.md`).
-- Run `export_pdf.py --cv-dir CVs/<PersonName> <role_name>` to produce the PDF.
+- Run `export_pdf.py --cv-dir CVs/<PersonName> <role_name>` to produce the PDF (prints a feedback summary at the end).
 
 ## Project Structure
 
@@ -66,8 +70,12 @@ Each folder under `CVs/` is a self-contained CV project per person, with its own
    - `include_tags`: Which skill groups from the base to include
    - `extra_skills`: Additional skills not in the base (role-specific)
    - `ats_keywords`: Keywords embedded as an HTML comment for ATS parsing
+   - `feedback`: General assessment of how well the candidate fits the position
+   - `strong_points`: List of candidate strengths relative to the job requirements
+   - `weak_points`: List of gaps or weaknesses relative to the job requirements
+   - `review_notes`: Actionable suggestions for improving the application
 3. `generate_cv.py` assembles a tailored CV by filtering the base with the role config and adds an entry to `positions.md`.
-4. `export_pdf.py` strips tag comments and renders to a clean PDF.
+4. `export_pdf.py` strips tag comments, renders to a clean PDF, and prints a feedback summary (match, strong/weak points, review notes) from the role config.
 
 The `roles/` and `output/` folders start empty. Role configs are generated based on provided job positions, then used to produce tailored CVs.
 
