@@ -1,0 +1,111 @@
+role: "Instrumentation & Control Engineer"
+company: "FortisBC"
+description: "Engineering design for I&C systems in gas transmission/distribution facilities including pressure regulating stations, CNG, LNG, and compressor stations"
+match: "72%"
+source: "LinkedIn"
+
+summary: >
+  Instrumentation & Control Engineer with 8+ years of experience designing, configuring,
+  and commissioning control systems for energy infrastructure. Proven expertise in DCS, PLC,
+  HMI, and SCADA systems across complex industrial facilities. Strong background in
+  instrumentation detailed design including schematics, I/O drawings, wiring diagrams, and
+  control panel layouts. Experienced in leading engineering deliverables from conceptual
+  design through commissioning, mentoring junior engineers, and ensuring compliance with
+  industry codes and standards.
+
+include_tags:
+  - instrumentation
+  - control_systems
+  - calibration
+  - project_management
+  - software
+  - safety_compliance
+
+extra_skills:
+  - Gas facility instrumentation and control design
+  - Control and system functional narratives
+  - Telemetry and remote SCADA systems
+  - CSA codes and Canadian standards compliance
+  - MS-Project for project planning
+
+ats_keywords: >
+  instrumentation engineer, control systems, DCS, PLC, HMI, SCADA, telemetry,
+  schematics, I/O drawings, wiring diagrams, interconnection drawings, control cabinet layout,
+  P&ID, loop diagrams, commissioning, natural gas, gas transmission, gas distribution,
+  pressure regulating stations, CNG, LNG, propane, compressor stations, pipeline,
+  valve stations, conceptual design, detailed design, programming, configuration,
+  feasibility assessment, functional narratives, capital projects, CSA codes,
+  IEC 61511, functional safety, SIL, HAZOP, LOPA, vendor evaluation, FAT, SAT,
+  AutoCAD, MS-Project, technical mentoring, professional engineer
+
+feedback: >
+  Strong technical match. John's core skills in instrumentation design, DCS/PLC/SCADA
+  configuration, and control system engineering align directly with the role's requirements.
+  His experience with P&IDs, loop diagrams, schematics, and wiring drawings covers the
+  design deliverables expected. The 8+ years of experience exceeds the 4-7 year requirement.
+  Key concerns are the P.Eng registration requirement (BC-specific), the natural gas
+  utility-specific experience (John's background is oil & gas/petrochemical which is adjacent
+  but not identical), and the geographic relocation from Houston to BC.
+
+overall_recommendation: "Apply with reservations — excellent technical fit but P.Eng registration in BC and lack of gas utility-specific experience are significant barriers"
+
+deal_breakers:
+  - "P.Eng registration with EGBC is required — John would need to transfer or obtain registration with Engineers and Geoscientists BC, which involves a process and timeline"
+  - "Position is in British Columbia, Canada — relocation from Houston, TX required, plus Canadian work authorization"
+
+requirements_analysis:
+  - requirement: "Bachelor's Degree in engineering"
+    status: "met"
+    detail: "B.Sc. in Electrical Engineering (Instrumentation & Control) from LSU"
+  - requirement: "4-7 years' experience in natural gas or Oil and Gas"
+    status: "partial"
+    detail: "Has 8+ years in oil & gas and petrochemical which exceeds the range, but in refining/petrochemical rather than gas transmission and distribution specifically"
+  - requirement: "Registered as P.Eng with EGBC"
+    status: "unmet"
+    detail: "No P.Eng registration mentioned — would need to apply through EGBC which requires assessment of foreign credentials and potentially exams"
+  - requirement: "I&C Engineering and Design (schematics, I/O, wiring, cabinet layout)"
+    status: "met"
+    detail: "Core competency — has designed instrument specifications, loop diagrams, cable schedules, hook-up drawings, and wiring designs throughout career"
+  - requirement: "DCS, PLC, HMI and Telemetry/SCADA"
+    status: "met"
+    detail: "Extensive experience with Honeywell Experion DCS, Allen-Bradley and Siemens PLCs, SCADA/HMI systems. Telemetry not explicitly listed but SCADA implies remote monitoring"
+  - requirement: "Canadian CSA Codes for Oil and Gas"
+    status: "unmet"
+    detail: "Experience is with US/international standards (IEC, ISA, API, NEC/NFPA). No Canadian CSA code experience documented — learnable but not currently held"
+  - requirement: "MS Office and MS-Project"
+    status: "partial"
+    detail: "MS Office listed as a skill. MS-Project not mentioned but is a standard tool that can be picked up quickly"
+  - requirement: "Technical mentoring of Engineers in Training"
+    status: "met"
+    detail: "Currently mentors junior engineers and reviews deliverables for QA at Petronova Engineering"
+  - requirement: "Effective communication and teamwork"
+    status: "met"
+    detail: "Coordinates with multidisciplinary teams (process, electrical, piping) and leads engineering deliverables across disciplines"
+  - requirement: "Research and sound judgement"
+    status: "met"
+    detail: "Conducts SIL verification studies, prepares safety requirement specifications, and participates in HAZOP/LOPA reviews — all requiring analytical judgment"
+
+strong_points:
+  - "Instrumentation design is John's core competency — schematics, I/O lists, loop diagrams, wiring designs, hook-up drawings, and cable schedules are exactly what this role produces daily"
+  - "DCS/PLC/SCADA experience across multiple platforms (Honeywell Experion, Emerson DeltaV, Allen-Bradley, Siemens) — demonstrates platform-agnostic control systems knowledge the role requires"
+  - "8+ years exceeds the 4-7 year requirement — with progression from junior to senior engineer showing technical depth and leadership growth"
+  - "Commissioning and start-up experience — has done field commissioning, point-to-point checkout, and logic validation, directly relevant to supporting capital project installations"
+  - "Mentoring junior engineers — currently mentors and reviews deliverables, directly maps to the 'technical mentoring of Engineers in Training' requirement"
+  - "Functional safety expertise (IEC 61511, HAZOP, LOPA, SIL) — adds value beyond base requirements, relevant to safety-critical gas facility design"
+  - "Multidisciplinary coordination — leads engineering across process, electrical, and piping teams during FEED and detailed design phases"
+
+weak_points:
+  - "CRITICAL: No P.Eng registration — EGBC registration is a regulatory requirement for practicing engineering in BC. Transferring from a US PE license involves credential review and may take months"
+  - "CRITICAL: Geographic — position is in BC, Canada. Relocation from Houston plus Canadian work authorization are practical barriers"
+  - "MODERATE: No gas transmission/distribution experience — oil & gas refining and petrochemical is related but gas utility work (pressure regulating stations, CNG refueling, pipeline stations) has different design standards and operational context"
+  - "MODERATE: No Canadian CSA code experience — US standards (NEC, NFPA, API) don't directly map to CSA Z662, CSA C22.1, etc. Learnable but not a day-one capability"
+  - "MINOR: No MS-Project listed — standard tool that's easy to learn, unlikely to be a differentiator"
+  - "MINOR: Telemetry not explicitly listed — SCADA experience implies remote monitoring but gas utility telemetry has specific protocols and infrastructure"
+
+review_notes:
+  - "If John has or is pursuing a US PE license, mention it prominently — it demonstrates commitment to professional registration and streamlines EGBC reciprocity"
+  - "Reframe petrochemical/refinery experience to highlight gas-related work — any experience with gas processing, gas metering, or pipeline instrumentation should be called out specifically"
+  - "Emphasize the conceptual-through-commissioning project lifecycle experience — this role covers the full lifecycle and John has done exactly that"
+  - "Highlight the safety compliance background (IEC 61511, SIL, HAZOP) — gas facilities are safety-critical and this expertise adds significant value"
+  - "Frame mentoring experience explicitly as 'mentoring Engineers in Training' using that exact terminology to match the JD"
+  - "If John has any experience with remote/telemetry systems, gas metering, or pressure regulation instrumentation, add it to close the domain gap"

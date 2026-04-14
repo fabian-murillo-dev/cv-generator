@@ -206,28 +206,78 @@ def print_feedback(role_config: dict):
     strong = role_config.get("strong_points", [])
     weak = role_config.get("weak_points", [])
     review = role_config.get("review_notes", [])
+    reqs = role_config.get("requirements_analysis", [])
+    recommendation = role_config.get("overall_recommendation")
+    deal_breakers = role_config.get("deal_breakers", [])
 
-    if not any([match, feedback, strong, weak, review]):
+    if not any([match, feedback, strong, weak, review, reqs, recommendation, deal_breakers]):
         return
 
+    company = role_config.get("company", "Unknown")
+    role = role_config.get("role", "Unknown")
+    sep = "=" * 60
+
     print()
-    print("--- Position Feedback ---")
+    print(sep)
+    print(f"  POSITION FEEDBACK: {role} @ {company}")
+    print(sep)
+
     if match is not None:
-        print(f"  Match:    {match}%")
+        match_str = str(match).rstrip("%")
+        try:
+            match_val = int(match_str)
+            if match_val >= 75:
+                indicator = "STRONG"
+            elif match_val >= 50:
+                indicator = "MODERATE"
+            else:
+                indicator = "WEAK"
+        except ValueError:
+            indicator = ""
+        print(f"\n  Match:  {match_str}% — {indicator}" if indicator else f"\n  Match:  {match}")
+
+    if recommendation:
+        print(f"  Recommendation:  {recommendation}")
+
     if feedback:
-        print(f"  Summary:  {feedback}")
+        print(f"\n  Summary:\n    {feedback}")
+
+    if deal_breakers:
+        print(f"\n  {'!' * 3} DEAL BREAKERS {'!' * 3}")
+        for db in deal_breakers:
+            print(f"    !! {db}")
+
+    if reqs:
+        print(f"\n  Requirements Analysis:")
+        status_icons = {"met": "[MET]    ", "partial": "[PARTIAL]", "unmet": "[UNMET]  "}
+        for req in reqs:
+            if isinstance(req, dict):
+                status = status_icons.get(req.get("status", ""), "         ")
+                name = req.get("requirement", "")
+                detail = req.get("detail", "")
+                print(f"    {status}  {name}")
+                if detail:
+                    print(f"               {detail}")
+            else:
+                print(f"    - {req}")
+
     if strong:
-        print("  Strong points:")
+        print(f"\n  Strong Points ({len(strong)}):")
         for s in strong:
             print(f"    + {s}")
+
     if weak:
-        print("  Weak points:")
+        print(f"\n  Weak Points ({len(weak)}):")
         for w in weak:
             print(f"    - {w}")
+
     if review:
-        print("  To review:")
-        for r in review:
-            print(f"    * {r}")
+        print(f"\n  Action Items:")
+        for i, r in enumerate(review, 1):
+            print(f"    {i}. {r}")
+
+    print()
+    print(sep)
 
 
 def export_role(role_name: str, cv_dir: Path):

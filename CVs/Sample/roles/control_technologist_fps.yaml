@@ -1,0 +1,106 @@
+role: "Control Technologist"
+company: "FPS Food Process Solutions"
+description: "Design electrical control systems for automated food production lines, program PLC/HMI, troubleshoot freezer applications"
+match: "58%"
+source: "LinkedIn"
+
+summary: >
+  Control Systems Engineer with 8+ years of experience in electrical control system design,
+  PLC programming (Allen-Bradley/Rockwell), and HMI/SCADA development for industrial automation.
+  Proven ability to design control panels, develop detailed schematics, and commission automated
+  systems. Strong background in troubleshooting industrial equipment, coordinating with
+  multidisciplinary teams, and delivering technical documentation. Adept at ensuring compliance
+  with industry standards and providing hands-on support from design through start-up.
+
+include_tags:
+  - control_systems
+  - instrumentation
+  - software
+  - calibration
+  - project_management
+
+extra_skills:
+  - Rockwell RSLogix 5000 / Studio 5000
+  - FactoryTalk View HMI development
+  - PowerFlex drive configuration
+  - Control panel design and schematics
+  - Electrical troubleshooting and wiring
+  - Industrial equipment diagnostics and repair
+  - Customer technical support and training
+
+ats_keywords: >
+  PLC programming, Allen-Bradley, Rockwell, RSLogix, Studio 5000, FactoryTalk View,
+  PowerFlex drives, HMI, SCADA, control panel design, schematics, AutoCAD, AutoCAD Electrical,
+  troubleshooting, commissioning, industrial automation, food processing, electrical engineering,
+  control systems, field devices, customer support, technical training
+
+feedback: >
+  Moderate match. John's core competencies in PLC programming (Allen-Bradley), HMI/SCADA design,
+  AutoCAD, and electrical control systems align well with the technical requirements. The main gaps
+  are lack of food industry experience, no explicit Rockwell Studio 5000/FactoryTalk View listed
+  (though Allen-Bradley experience implies familiarity), no PowerFlex drive experience mentioned,
+  and no Chinese language ability. The role's customer-facing support and 24/7 shift aspects are
+  also outside John's documented experience.
+
+overall_recommendation: "Apply with reservations — strong controls foundation but food industry gap and customer-facing support role is a significant shift from engineering-focused background"
+
+deal_breakers:
+  - "No food processing or refrigeration experience — this is an industrial food company and freezer troubleshooting is a core duty, not a nice-to-have"
+  - "No customer support experience — role is heavily service-oriented with 24/7 monitoring, call handling, and direct client communication"
+
+requirements_analysis:
+  - requirement: "Bachelor's in Electrical Engineering or automation"
+    status: "met"
+    detail: "B.Sc. in Electrical Engineering (Instrumentation & Control) from LSU"
+  - requirement: "Rockwell RSLogix/Studio 5000"
+    status: "partial"
+    detail: "Has Allen-Bradley PLC programming which is Rockwell platform, but no explicit Studio 5000 listed — likely has exposure but not confirmed"
+  - requirement: "FactoryTalk View"
+    status: "partial"
+    detail: "Has HMI/SCADA design experience (Honeywell, Emerson) but no Rockwell FactoryTalk specifically"
+  - requirement: "PowerFlex Drives"
+    status: "unmet"
+    detail: "No VFD or drive configuration experience mentioned anywhere in CV"
+  - requirement: "AutoCAD or AutoCAD Electrical"
+    status: "met"
+    detail: "AutoCAD listed as core skill, used for hook-up drawings and installation details"
+  - requirement: "Diagnosing and repairing industrial equipment"
+    status: "met"
+    detail: "8+ years of commissioning, troubleshooting, and field calibration across multiple facilities"
+  - requirement: "Customer-facing support and communication"
+    status: "unmet"
+    detail: "All experience is internal engineering roles — no customer service, call handling, or client-facing support documented"
+  - requirement: "Chinese language (Mandarin/Cantonese)"
+    status: "unmet"
+    detail: "Speaks English and Spanish only — listed as preferred, not required"
+  - requirement: "24/7 rotating shift work"
+    status: "unmet"
+    detail: "No shift work or on-call experience documented — has done turnaround support which involves extended hours"
+  - requirement: "Travel availability"
+    status: "partial"
+    detail: "Has field work experience across multiple locations but no explicit travel role documented"
+
+strong_points:
+  - "PLC programming with Allen-Bradley (Rockwell platform) — directly maps to the RSLogix/Studio 5000 requirement, as Allen-Bradley IS Rockwell Automation. This is the strongest selling point"
+  - "HMI and SCADA design experience — has designed HMI interfaces for Honeywell Experion and Emerson DeltaV, demonstrating transferable skills to FactoryTalk View even if not that specific platform"
+  - "AutoCAD proficiency for schematics — meets requirement exactly, used extensively for hook-up drawings and installation details throughout career"
+  - "B.Sc. in Electrical Engineering — exceeds the diploma minimum, with specialization in Instrumentation & Control which is directly relevant"
+  - "8+ years in industrial controls — well exceeds typical experience expectations, with progression from junior to senior roles showing growth"
+  - "Commissioning and troubleshooting — has hands-on field experience debugging instrumentation loops and control systems, relevant to the troubleshooting duties"
+  - "Mentoring junior engineers — maps to the 'train customer operators' requirement, showing ability to transfer technical knowledge"
+
+weak_points:
+  - "CRITICAL: No food processing or refrigeration industry experience — the role is specifically about freezer applications and food production lines. Oil & gas controls knowledge transfers technically but the domain context is completely different"
+  - "CRITICAL: No customer support experience — this role is essentially a service/support position with call handling, customer follow-up, and complaint escalation. John's background is pure engineering with no client-facing service role"
+  - "MODERATE: No explicit Rockwell Studio 5000 or FactoryTalk View — Allen-Bradley implies Rockwell familiarity but the JD specifically names these tools. If John hasn't used them, there's a learning curve"
+  - "MODERATE: No PowerFlex drive experience — VFDs are common in food processing for conveyor and motor control. This is a gap that would need to be addressed"
+  - "MINOR: No Chinese language proficiency — listed as preferred not required, but could be a differentiator for other candidates"
+  - "MINOR: No 24/7 shift or on-call experience — lifestyle concern more than skill gap, but worth noting as it's a significant job condition"
+
+review_notes:
+  - "Emphasize Allen-Bradley PLC work and explicitly mention RSLogix/Studio 5000 if John has any exposure — even indirect familiarity counts here"
+  - "Highlight HMI design experience and frame it as platform-agnostic skill that transfers to FactoryTalk View"
+  - "Position commissioning and start-up support as analogous to customer-facing troubleshooting — both involve diagnosing issues under pressure and communicating with stakeholders"
+  - "Leverage mentoring experience as evidence of ability to train customer operators — reframe internal mentoring as knowledge transfer"
+  - "Add a line about adaptability to new industries in the summary — John's cross-facility experience (refineries, petrochemical, gas processing, power plants) shows ability to learn new domains"
+  - "If John has any PowerFlex, VFD, or motor drive experience, add it immediately — this is an easy gap to close if the experience exists but wasn't listed"

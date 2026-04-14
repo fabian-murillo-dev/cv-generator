@@ -2,6 +2,8 @@
 
 Multi-version CV system that generates role-specific resumes from a single base CV.
 
+**This is a standalone, portable project.** It can be compressed and sent to others. Never save preferences, memory, or context outside this folder — all configuration and instructions must live inside the project directory.
+
 ## On Conversation Start
 
 When a new conversation begins in this project, first ask the user:
@@ -31,11 +33,23 @@ Once the base CV is in place and a position is provided:
   - `source`: Where the job posting was found (e.g., LinkedIn, Indeed, Craigslist, company website). Always ask the user. If the job description hints at a platform, confirm with the user rather than assuming.
   - `role`, `summary`, `include_tags`, `extra_skills`, `ats_keywords`: As described in "How It Works" below
   - `feedback`: General assessment of position fit
-  - `strong_points`: List of candidate strengths relative to the position
-  - `weak_points`: List of gaps or weaknesses relative to the position
+  - `strong_points`: List of candidate strengths relative to the position — each entry should explain WHY it's a strength and how it maps to a specific job requirement
+  - `weak_points`: List of gaps or weaknesses relative to the position — each entry should note the severity (critical vs nice-to-have) and whether it's addressable
   - `review_notes`: Actionable suggestions for improving the application
+  - `requirements_analysis`: List of key job requirements with match status. Each entry is a dict with `requirement` (what the job asks for), `status` ("met", "partial", or "unmet"), and `detail` (how the candidate does or doesn't meet it)
+  - `overall_recommendation`: One-line recommendation — "Apply", "Apply with reservations", or "Consider skipping", with a brief reason
+  - `deal_breakers`: List of critical gaps that could prevent getting the role (omit if none)
 - Run `generate_cv.py --cv-dir CVs/<PersonName> <role_name>` to produce the tailored CV (this also adds an entry to `positions.md`).
-- Run `export_pdf.py --cv-dir CVs/<PersonName> <role_name>` to produce the PDF (prints a feedback summary at the end).
+- Run `export_pdf.py --cv-dir CVs/<PersonName> <role_name>` to produce the PDF.
+- **Display the full detailed feedback directly in the chat response** using this format:
+  - Match % with strength indicator and overall recommendation
+  - Deal breakers (if any) — prominently displayed
+  - Requirements analysis as a markdown table (Status | Requirement | Detail)
+  - Strong points with explanation of why each maps to the JD
+  - Weak points with severity labels (CRITICAL / MODERATE / MINOR)
+  - Numbered action items
+  - Generated file paths at the end
+  - Do NOT summarize with a brief "Key takeaway" — show the full detail
 
 ## Project Structure
 
@@ -71,9 +85,12 @@ Each folder under `CVs/` is a self-contained CV project per person, with its own
    - `extra_skills`: Additional skills not in the base (role-specific)
    - `ats_keywords`: Keywords embedded as an HTML comment for ATS parsing
    - `feedback`: General assessment of how well the candidate fits the position
-   - `strong_points`: List of candidate strengths relative to the job requirements
-   - `weak_points`: List of gaps or weaknesses relative to the job requirements
+   - `strong_points`: List of candidate strengths relative to the job requirements (with explanation of why and how it maps to the JD)
+   - `weak_points`: List of gaps or weaknesses relative to the job requirements (with severity and whether addressable)
    - `review_notes`: Actionable suggestions for improving the application
+   - `requirements_analysis`: Key job requirements mapped to candidate qualifications (each with `requirement`, `status`: met/partial/unmet, and `detail`)
+   - `overall_recommendation`: One-line recommendation (Apply / Apply with reservations / Consider skipping)
+   - `deal_breakers`: Critical gaps that could prevent getting the role (if any)
 3. `generate_cv.py` assembles a tailored CV by filtering the base with the role config and adds an entry to `positions.md`.
 4. `export_pdf.py` strips tag comments, renders to a clean PDF, and prints a feedback summary (match, strong/weak points, review notes) from the role config.
 

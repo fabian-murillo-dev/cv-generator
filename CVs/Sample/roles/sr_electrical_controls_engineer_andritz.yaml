@@ -1,0 +1,141 @@
+role: "Senior Electrical & Controls Engineer"
+company: "ANDRITZ"
+description: "Lead design and delivery of electrical and control system solutions for industrial automation and digitalization clients in North America"
+match: "52%"
+source: "LinkedIn"
+
+summary: >
+  Senior Electrical & Controls Engineer with 8+ years of experience leading the design,
+  commissioning, and delivery of control and instrumentation systems across industrial
+  facilities. Proven expertise in DCS, PLC/HMI, and SCADA architecture, with strong
+  capabilities in control philosophy development, P&ID design, and instrumentation
+  standards. Experienced in facility audits, project scoping, cost estimation, and
+  client-facing technical recommendations. Track record of mentoring engineering staff,
+  overseeing multi-discipline project execution, and ensuring compliance with industry
+  safety and regulatory standards.
+
+include_tags:
+  - instrumentation
+  - control_systems
+  - calibration
+  - project_management
+  - software
+  - safety_compliance
+
+extra_skills:
+  - Facility audits and project scoping
+  - Control philosophy development and architecture design
+  - Client relationship management and technical advisory
+  - Tender and construction package preparation
+  - North American electrical codes (NEC, NFPA 70E, CSA)
+
+ats_keywords: >
+  senior electrical engineer, controls engineer, electrical and controls, DCS, PLC,
+  HMI, SCADA, SIS, control systems, instrumentation, P&ID, control philosophy,
+  protection and control, coordination studies, MV, LV, electrical power systems,
+  grounding, cable engineering, raceway, commissioning, start-up, facility audit,
+  project scoping, cost estimation, client recommendations, tender packages,
+  construction packages, automation, digitalization, control logic, system integration,
+  IEC 61511, functional safety, SIL, HAZOP, LOPA, SRS, mentoring, technical leadership,
+  vendor evaluation, FAT, SAT, Allen-Bradley, Siemens, Honeywell Experion, Emerson DeltaV
+
+feedback: >
+  Moderate technical fit with significant gaps. John's control and instrumentation
+  background is strong — DCS/PLC/HMI architecture, P&ID development, control system
+  commissioning, and instrumentation design are core to this role and core to John's
+  experience. However, this is a Senior Electrical & Controls Engineer position with
+  substantial electrical power systems responsibilities (MV/LV power system design,
+  protection and coordination studies, electrical room development, grounding strategy,
+  cable/raceway engineering) that are not represented in John's CV. His degree is in
+  Electrical Engineering which provides the foundation, but his career has focused on
+  the instrumentation and control side rather than power systems. The P.Eng. BC
+  requirement and Canadian work authorization are critical barriers.
+
+overall_recommendation: "Apply with reservations — strong controls/instrumentation fit but missing electrical power systems experience and Canadian P.Eng. registration are significant barriers"
+
+deal_breakers:
+  - "P.Eng. registration in British Columbia is listed as essential — John has no Canadian engineering license and would need to apply through EGBC, which is a lengthy process"
+  - "Position requires legal authorization to work in Canada — John is based in Houston, TX with no Canadian work authorization mentioned"
+  - "MV/LV electrical power system design experience (protection studies, coordination, grounding, electrical room design) is a core responsibility but absent from John's background"
+
+requirements_analysis:
+  - requirement: "Bachelor's degree or diploma in electrical engineering (or similar)"
+    status: "met"
+    detail: "B.Sc. in Electrical Engineering (Instrumentation & Control) from LSU"
+  - requirement: "Minimum 8 years' relevant experience"
+    status: "met"
+    detail: "8+ years of experience from junior to senior instrumentation engineer, meeting the minimum threshold"
+  - requirement: "Registered as P.Eng. in British Columbia"
+    status: "unmet"
+    detail: "No P.Eng. registration — this is listed as essential and would require application through EGBC with credential assessment"
+  - requirement: "Practical knowledge of North American standards"
+    status: "partial"
+    detail: "Has US standards experience (IEC, ISA, API, NEC/NFPA) but no Canadian-specific standards (CSA). US standards are partially applicable"
+  - requirement: "Lead audits, define scopes, develop engineering concepts and cost estimates"
+    status: "partial"
+    detail: "Has project planning/execution and vendor evaluation experience but no explicit facility audit or cost estimation experience documented"
+  - requirement: "MV and LV electrical power system design"
+    status: "unmet"
+    detail: "No electrical power systems design experience documented — career has focused on instrumentation and control, not power distribution"
+  - requirement: "Protection and control system design, coordination studies"
+    status: "unmet"
+    detail: "No protection engineering or coordination studies experience. This is a distinct electrical engineering discipline from control systems"
+  - requirement: "Control and instrumentation systems (control philosophies, P&IDs, architectures)"
+    status: "met"
+    detail: "Core strength — has designed P&IDs, led instrumentation engineering, and shaped control system architectures throughout career"
+  - requirement: "DCS and PLC/HMI solutions, control logic strategies"
+    status: "met"
+    detail: "Extensive hands-on experience with Honeywell Experion DCS, Allen-Bradley and Siemens PLCs, SCADA/HMI design, and logic validation"
+  - requirement: "Lead commissioning efforts"
+    status: "met"
+    detail: "Has commissioning and start-up experience including DCS/SIS commissioning, point-to-point checkout, and loop checking"
+  - requirement: "Tender and construction packages"
+    status: "partial"
+    detail: "Has technical documentation experience and vendor procurement but no explicit tender/construction package preparation mentioned"
+  - requirement: "Experience coaching junior and intermediate engineers"
+    status: "met"
+    detail: "Currently mentors junior engineers and reviews deliverables for quality assurance at Petronova Engineering"
+  - requirement: "Client relationships and high-level engineering decisions"
+    status: "partial"
+    detail: "Has cross-discipline coordination and technical leadership but no explicit client-facing advisory role documented"
+  - requirement: "Legally authorized to work in Canada"
+    status: "unmet"
+    detail: "Based in Houston, TX — no Canadian work authorization indicated"
+  - requirement: "Travel 5-20% to domestic and international sites"
+    status: "met"
+    detail: "Has field commissioning and site support experience; travel requirement is moderate"
+  - requirement: "Consulting engineering experience (valued)"
+    status: "unmet"
+    detail: "All experience is with operating/EPC companies, not consulting firms"
+  - requirement: "Mining and/or chemical industries experience (valued)"
+    status: "partial"
+    detail: "Petrochemical industry experience is adjacent to chemical; no mining experience"
+  - requirement: "Site audit, commissioning, construction, and start-up experience (valued)"
+    status: "partial"
+    detail: "Has commissioning and start-up experience but no site audit or construction supervision documented"
+
+strong_points:
+  - "Control and instrumentation design is John's core strength — P&ID development, instrument specifications, control system architecture, and instrumentation standards directly map to the C&I responsibilities in this role"
+  - "DCS/PLC/HMI experience across multiple platforms (Honeywell Experion, Emerson DeltaV, Allen-Bradley, Siemens) — the role requires architecting and validating these solutions and John has hands-on configuration and commissioning experience"
+  - "Commissioning and start-up experience — has led DCS/SIS commissioning, point-to-point checkout, and loop validation, directly relevant to the commissioning leadership this role requires"
+  - "8+ years of progressive experience from junior to senior engineer — meets the minimum experience requirement and demonstrates career growth and increasing responsibility"
+  - "Functional safety expertise (IEC 61511, HAZOP, LOPA, SIL, CFSE certification) — adds significant value for safety-critical industrial facilities and demonstrates depth beyond basic controls engineering"
+  - "Mentoring and technical leadership — currently mentors junior engineers and reviews deliverables for QA, mapping directly to the staff mentoring and technical oversight expectations"
+  - "B.Sc. in Electrical Engineering provides the academic foundation for the electrical power systems side even though practical experience is in I&C"
+
+weak_points:
+  - "CRITICAL: No P.Eng. BC registration — this is an essential requirement listed in the job posting. Obtaining EGBC registration from a US-based engineer involves credential review, possible examinations, and significant processing time"
+  - "CRITICAL: No Canadian work authorization — relocation from Houston to Richmond, BC plus immigration requirements are major practical barriers"
+  - "CRITICAL: No MV/LV electrical power system design experience — the role requires overseeing power system designs, electrical room development, equipment selection, grounding strategy, and cable/raceway engineering. This is a major gap in John's profile"
+  - "CRITICAL: No protection engineering experience — coordination studies, protection settings development, and system integration strategies for electrical protection are absent from John's background"
+  - "MODERATE: No consulting engineering experience — the role is in a consulting/solutions firm serving clients, requiring client relationship management and advisory skills not documented in John's experience"
+  - "MODERATE: No facility audit or scoping experience — the role requires leading audits of industrial facilities and developing engineering concepts, cost estimates, and recommendations"
+  - "MINOR: No mining industry experience — valued but not essential, and petrochemical experience is adjacent to chemical industry work"
+
+review_notes:
+  - "The electrical power systems gap is the biggest technical concern — if John has any exposure to power distribution, switchgear, protection relays, or electrical studies, it should be prominently highlighted"
+  - "If John holds or is pursuing a US PE license, mention it to show professional registration commitment and simplify any EGBC reciprocity process"
+  - "Reframe experience to emphasize leadership and client-facing aspects — scope definition, technical recommendations, and engineering decision-making"
+  - "Highlight the full project lifecycle experience from FEED through commissioning — the role explicitly covers this range"
+  - "Emphasize the consulting-adjacent aspects: vendor evaluation, multi-discipline coordination, and technical advisory roles"
+  - "The salary range ($120K-$160K CAD) should be considered in the context of relocation from Houston — cost of living in Richmond, BC is significantly higher"
