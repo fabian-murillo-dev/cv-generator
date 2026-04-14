@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Ignore all CV folders except Sample
+CVs/*
+!CVs/Sample/
