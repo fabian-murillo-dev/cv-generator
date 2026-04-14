@@ -17,6 +17,7 @@ Examples:
 import sys
 import re
 import os
+from datetime import date
 from pathlib import Path
 
 try:
@@ -199,6 +200,38 @@ def build_cv(role_config: dict, base_cv: Path) -> str:
     return output
 
 
+def update_positions_tracker(cv_dir: Path, role_name: str, role_config: dict):
+    """Append an entry to positions.md in the CV directory."""
+    tracker_path = cv_dir / "positions.md"
+    company = role_config.get("company", "—")
+    position = role_config.get("role", role_name)
+    description = role_config.get("description", "—")
+    cv_path = f"output/cv_{role_name}.pdf"
+    today = date.today().strftime("%Y-%m-%d")
+
+    header = (
+        "# Positions Tracker\n\n"
+        "| Date | Company | Position | Description | CV Sent | Replied | Interview | CV | Match |\n"
+        "|------|---------|----------|-------------|---------|---------|-----------|-------|-------|\n"
+    )
+
+    if not tracker_path.exists():
+        tracker_path.write_text(header)
+
+    content = tracker_path.read_text()
+    # Check if this role already has an entry (by CV path) to avoid duplicates
+    if cv_path in content:
+        print(f"Tracker:   entry already exists for {role_name}")
+        return
+
+    match = role_config.get("match", "—")
+    row = f"| {today} | {company} | {position} | {description} | [ ] | [ ] | [ ] | [{role_name}]({cv_path}) | {match} |\n"
+    with open(tracker_path, "a") as f:
+        f.write(row)
+
+    print(f"Tracker:   added entry to {tracker_path}")
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__.strip())
@@ -233,6 +266,8 @@ def main():
     print(f"Tags:      {', '.join(role_config.get('include_tags', []))}")
     if role_config.get("ats_keywords"):
         print(f"ATS keys:  {len(role_config['ats_keywords'])} keywords embedded")
+
+    update_positions_tracker(cv_dir, role_name, role_config)
 
 
 if __name__ == "__main__":

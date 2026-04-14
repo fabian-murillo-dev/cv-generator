@@ -6,7 +6,7 @@ Multi-version CV system that generates role-specific resumes from a single base 
 
 1. **Base CV** (`cv_base.md`) — Your complete CV in Markdown. Skill groups and experience bullets are annotated with HTML comment tags (e.g. `<!-- tag:instrumentation -->`).
 2. **Role configs** (`roles/*.yaml`) — One YAML file per job application, specifying which tags to include, a tailored summary, extra skills, and ATS keywords.
-3. **Generate** — `generate_cv.py` assembles a tailored CV by filtering the base with the role config.
+3. **Generate** — `generate_cv.py` assembles a tailored CV by filtering the base with the role config, and adds an entry to `positions.md`.
 4. **Export** — `export_pdf.py` strips tag comments and renders a clean, styled PDF.
 
 ## Project Structure
@@ -17,10 +17,12 @@ export_pdf.py           # Converts output .md files to styled PDFs
 CVs/
   ├── Sample/           # Example CV (tracked in git)
   │   ├── cv_base.md
+  │   ├── positions.md
   │   ├── roles/
   │   └── output/
   └── <PersonName>/     # Real CVs (gitignored)
       ├── cv_base.md    # Master CV with tagged sections
+      ├── positions.md  # Auto-generated position tracker
       ├── roles/        # .yaml configs (one per job application)
       └── output/       # Generated .md and .pdf files
 ```
@@ -70,6 +72,9 @@ Tag skill groups and experience bullets in `cv_base.md` with HTML comments. Tags
 Then reference those tags in a role config to include only the relevant groups:
 
 ```yaml
+match: 80%
+company: Acme Corp
+description: Full stack role for internal tools team
 role: Full Stack Developer
 summary: >
   Full Stack Developer with 5+ years of experience...
@@ -86,6 +91,24 @@ ats_keywords:
 ```
 
 The `CVs/Sample/` folder contains a working example with its own set of tags — see it for a complete reference.
+
+## Position Tracking
+
+Every time `generate_cv.py` runs, it automatically adds an entry to `positions.md` in the person's CV folder. The tracker is a Markdown table with the following columns:
+
+| Column | Description |
+|--------|-------------|
+| Date | When the CV was generated |
+| Company | From the `company` field in the role YAML |
+| Position | From the `role` field in the role YAML |
+| Description | From the `description` field in the role YAML |
+| CV Sent | Checkbox — mark `[x]` when the CV has been sent |
+| Replied | Checkbox — mark `[x]` when the company replies |
+| Interview | Checkbox — mark `[x]` when an interview is scheduled |
+| CV | Link to the generated PDF |
+| Match | Estimated match percentage between the candidate's profile and the job requirements |
+
+Update the checkboxes manually (`[ ]` → `[x]`) as the application progresses. The match percentage is set via the `match` field in the role YAML config. Duplicate entries for the same role are skipped automatically.
 
 ## Adding a New CV
 

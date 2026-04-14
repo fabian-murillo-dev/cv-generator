@@ -24,8 +24,12 @@ Then follow the appropriate path:
   2. Then ask **what position they are applying to** (job title or paste a job description).
 
 Once the base CV is in place and a position is provided:
-- Generate a role `.yaml` config in `CVs/<PersonName>/roles/` based on the job position provided, selecting the appropriate `include_tags` from their `cv_base.md` and crafting a tailored `summary`, `extra_skills`, and `ats_keywords`.
-- Run `generate_cv.py --cv-dir CVs/<PersonName> <role_name>` to produce the tailored CV.
+- Generate a role `.yaml` config in `CVs/<PersonName>/roles/` based on the job position provided, including:
+  - `match`: Your estimated match percentage between the candidate's profile and the job requirements
+  - `company`: Company name (extracted from the job posting)
+  - `description`: A very short description of the position
+  - `role`, `summary`, `include_tags`, `extra_skills`, `ats_keywords`: As described in "How It Works" below
+- Run `generate_cv.py --cv-dir CVs/<PersonName> <role_name>` to produce the tailored CV (this also adds an entry to `positions.md`).
 - Run `export_pdf.py --cv-dir CVs/<PersonName> <role_name>` to produce the PDF.
 
 ## Project Structure
@@ -36,10 +40,12 @@ export_pdf.py           # Converts output .md files to styled PDFs
 CVs/                    # One folder per person
   ├── Sample/           # Example CV (tracked in git)
   │   ├── cv_base.md
+  │   ├── positions.md
   │   ├── roles/
   │   └── output/
   └── <PersonName>/     # Real CVs (gitignored)
       ├── cv_base.md    # Person's master CV with tagged sections
+      ├── positions.md  # Auto-generated tracker for all applied positions
       ├── roles/        # Generated .yaml configs (one per job position)
       └── output/       # Generated CVs (.md and .pdf)
 ```
@@ -50,12 +56,15 @@ Each folder under `CVs/` is a self-contained CV project per person, with its own
 
 1. `cv_base.md` contains the full CV. Skill groups and experience bullets are annotated with HTML comment tags like `<!-- tag:control_systems -->`.
 2. When a job position is provided, a `.yaml` role config is generated in `roles/` containing:
+   - `company`: Company name (used for position tracking)
+   - `description`: Short description of the position (used for position tracking)
+   - `match`: Estimated match percentage between the candidate and the position
    - `role`: Title to display on the CV
    - `summary`: Role-specific professional summary
    - `include_tags`: Which skill groups from the base to include
    - `extra_skills`: Additional skills not in the base (role-specific)
    - `ats_keywords`: Keywords embedded as an HTML comment for ATS parsing
-3. `generate_cv.py` assembles a tailored CV by filtering the base with the role config.
+3. `generate_cv.py` assembles a tailored CV by filtering the base with the role config and adds an entry to `positions.md`.
 4. `export_pdf.py` strips tag comments and renders to a clean PDF.
 
 The `roles/` and `output/` folders start empty. Role configs are generated based on provided job positions, then used to produce tailored CVs.
@@ -89,9 +98,23 @@ pip install pyyaml fpdf2
 
 ## Available Tags in cv_base.md
 
+Tags are fully custom per person -- each `cv_base.md` defines its own set. Read the person's `cv_base.md` to discover their available tags before generating a role config.
+
+The `CVs/Sample/cv_base.md` uses these tags as an example:
 - `instrumentation` -- process instrumentation design, P&IDs, instrument index, loop diagrams, hook-ups
 - `control_systems` -- DCS, PLC, SCADA, SIS, HMI
 - `calibration` -- calibration, HART/Fieldbus, smart transmitters
 - `project_management` -- project execution, vendor evaluation, FAT/SAT, commissioning, documentation
 - `software` -- SPI/INtools, AutoCAD, MATLAB, SAP PM
 - `safety_compliance` -- functional safety, HAZOP, LOPA, SIL, IEC 61511
+
+## Position Tracking
+
+Each person's folder contains a `positions.md` file that tracks all generated CVs. It is auto-created and appended by `generate_cv.py`. Columns:
+- **Date** -- when the CV was generated
+- **Company** -- from the `company` field in the role YAML
+- **Position** -- from the `role` field in the role YAML
+- **Description** -- from the `description` field in the role YAML
+- **CV Sent / Replied / Interview** -- checkboxes, updated manually (`[ ]` → `[x]`)
+- **CV** -- link to the generated PDF
+- **Match** -- from the `match` field in the role YAML
