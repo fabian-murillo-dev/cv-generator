@@ -25,7 +25,7 @@ Then follow the appropriate path:
 
 Once the base CV is in place and a position is provided:
 - Generate a role `.yaml` config in `CVs/<PersonName>/roles/` based on the job position provided, including:
-  - `match`: Your estimated match percentage between the candidate's profile and the job requirements
+  - `match`: Your estimated match percentage between the candidate's profile and the job requirements (f.e. 50%)
   - `company`: Company name (extracted from the job posting)
   - `description`: A very short description of the position
   - `source`: Where the job posting was found (e.g., LinkedIn, Indeed, Craigslist, company website). Always ask the user. If the job description hints at a platform, confirm with the user rather than assuming.
@@ -59,7 +59,7 @@ Each folder under `CVs/` is a self-contained CV project per person, with its own
 2. When a job position is provided, a `.yaml` role config is generated in `roles/` containing:
    - `company`: Company name (used for position tracking)
    - `description`: Short description of the position (used for position tracking)
-   - `match`: Estimated match percentage between the candidate and the position
+   - `match`: Estimated match percentage between the candidate and the position (f.e. 50%)
    - `source`: Where the job posting was found (e.g., LinkedIn, Indeed, company website)
    - `role`: Title to display on the CV
    - `summary`: Role-specific professional summary
