@@ -28,6 +28,7 @@ Once the base CV is in place and a position is provided:
   - `match`: Your estimated match percentage between the candidate's profile and the job requirements
   - `company`: Company name (extracted from the job posting)
   - `description`: A very short description of the position
+  - `source`: Where the job posting was found (e.g., LinkedIn, Indeed, Craigslist, company website). Always ask the user. If the job description hints at a platform, confirm with the user rather than assuming.
   - `role`, `summary`, `include_tags`, `extra_skills`, `ats_keywords`: As described in "How It Works" below
 - Run `generate_cv.py --cv-dir CVs/<PersonName> <role_name>` to produce the tailored CV (this also adds an entry to `positions.md`).
 - Run `export_pdf.py --cv-dir CVs/<PersonName> <role_name>` to produce the PDF.
@@ -59,6 +60,7 @@ Each folder under `CVs/` is a self-contained CV project per person, with its own
    - `company`: Company name (used for position tracking)
    - `description`: Short description of the position (used for position tracking)
    - `match`: Estimated match percentage between the candidate and the position
+   - `source`: Where the job posting was found (e.g., LinkedIn, Indeed, company website)
    - `role`: Title to display on the CV
    - `summary`: Role-specific professional summary
    - `include_tags`: Which skill groups from the base to include
@@ -115,6 +117,7 @@ Each person's folder contains a `positions.md` file that tracks all generated CV
 - **Company** -- from the `company` field in the role YAML
 - **Position** -- from the `role` field in the role YAML
 - **Description** -- from the `description` field in the role YAML
+- **Source** -- where the job posting was found (from the `source` field in the role YAML)
 - **CV Sent / Replied / Interview** -- checkboxes, updated manually (`[ ]` → `[x]`)
 - **CV** -- link to the generated PDF
 - **Match** -- from the `match` field in the role YAML

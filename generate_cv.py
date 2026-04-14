@@ -211,8 +211,8 @@ def update_positions_tracker(cv_dir: Path, role_name: str, role_config: dict):
 
     header = (
         "# Positions Tracker\n\n"
-        "| Date | Company | Position | Description | CV Sent | Replied | Interview | CV | Match |\n"
-        "|------|---------|----------|-------------|---------|---------|-----------|-------|-------|\n"
+        "| Date | Company | Position | Description | Source | CV Sent | Replied | Interview | CV | Match |\n"
+        "|------|---------|----------|-------------|--------|---------|---------|-----------|-------|-------|\n"
     )
 
     if not tracker_path.exists():
@@ -225,7 +225,8 @@ def update_positions_tracker(cv_dir: Path, role_name: str, role_config: dict):
         return
 
     match = role_config.get("match", "—")
-    row = f"| {today} | {company} | {position} | {description} | [ ] | [ ] | [ ] | [{role_name}]({cv_path}) | {match} |\n"
+    source = role_config.get("source", "—")
+    row = f"| {today} | {company} | {position} | {description} | {source} | [ ] | [ ] | [ ] | [{role_name}]({cv_path}) | {match} |\n"
     with open(tracker_path, "a") as f:
         f.write(row)
 
