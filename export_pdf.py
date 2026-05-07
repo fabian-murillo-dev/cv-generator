@@ -108,6 +108,77 @@ def parse_clean_md(text: str) -> list:
     return blocks
 
 
+EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+URL_RE = re.compile(r"https?://\S+|www\.\S+")
+PHONE_RE = re.compile(r"\+?\(?\+?\d[\d\s().-]{6,}\d")
+
+
+def render_contact_line(pdf, line):
+    """Render a contact line, making emails/URLs/phones clickable."""
+    line = re.sub(r"\[([^\]]+)\]\(([^\)]+)\)", r"\1|||LINK|||\2|||END|||", line)
+
+    parts = line.split(" | ") if " | " in line else [line]
+    for i, part in enumerate(parts):
+        if i > 0:
+            pdf.write(5, "  |  ")
+
+        # Markdown link expansion
+        md_link_match = re.match(r"(.*?)\|\|\|LINK\|\|\|(.*?)\|\|\|END\|\|\|(.*)", part)
+        if md_link_match:
+            before, label, url = md_link_match.group(1), md_link_match.group(2), md_link_match.group(3)
+            if before:
+                pdf.write(5, before)
+            pdf.set_text_color(*COLOR_ACCENT)
+            pdf.write(5, label, link=url)
+            pdf.set_text_color(*COLOR_TEXT)
+            if md_link_match.group(3):
+                pdf.write(5, md_link_match.group(3))
+            continue
+
+        email_match = EMAIL_RE.search(part)
+        url_match = URL_RE.search(part)
+        phone_match = PHONE_RE.search(part) if not email_match and not url_match else None
+
+        if email_match:
+            before = part[:email_match.start()]
+            after = part[email_match.end():]
+            email = email_match.group()
+            if before:
+                pdf.write(5, before)
+            pdf.set_text_color(*COLOR_ACCENT)
+            pdf.write(5, email, link=f"mailto:{email}")
+            pdf.set_text_color(*COLOR_TEXT)
+            if after:
+                pdf.write(5, after)
+        elif url_match:
+            before = part[:url_match.start()]
+            after = part[url_match.end():]
+            url = url_match.group()
+            href = url if url.startswith("http") else f"https://{url}"
+            if before:
+                pdf.write(5, before)
+            pdf.set_text_color(*COLOR_ACCENT)
+            pdf.write(5, url, link=href)
+            pdf.set_text_color(*COLOR_TEXT)
+            if after:
+                pdf.write(5, after)
+        elif phone_match:
+            before = part[:phone_match.start()]
+            after = part[phone_match.end():]
+            phone = phone_match.group()
+            tel = re.sub(r"[^\d+]", "", phone)
+            if before:
+                pdf.write(5, before)
+            pdf.set_text_color(*COLOR_ACCENT)
+            pdf.write(5, phone, link=f"tel:{tel}")
+            pdf.set_text_color(*COLOR_TEXT)
+            if after:
+                pdf.write(5, after)
+        else:
+            pdf.write(5, part)
+    pdf.ln(5)
+
+
 def render_text_with_bold(pdf, text, size=10):
     """Render text that may contain **bold** segments."""
     pdf.set_font("Helvetica", "", size)
@@ -161,10 +232,9 @@ def build_pdf(blocks: list) -> CVPDF:
         elif btype == "text":
             # Handle contact info line or paragraphs
             if "|" in content and "@" in content:
-                clean = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", content)
                 pdf.set_font("Helvetica", "", 9)
                 pdf.set_text_color(*COLOR_TEXT)
-                pdf.cell(effective_width, 5, clean, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+                render_contact_line(pdf, content)
                 pdf.ln(2)
             else:
                 render_text_with_bold(pdf, content, 10)

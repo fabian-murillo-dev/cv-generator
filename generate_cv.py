@@ -28,6 +28,25 @@ except ImportError:
 
 DEFAULT_CV_DIR = Path(__file__).parent / "CVs" / "Sample"
 
+# Section name aliases — first entry is the canonical name used in feedback/logs
+SECTION_ALIASES = {
+    "summary": ["Professional Summary", "Perfil Profesional", "Resumen Profesional", "Resumen", "Summary", "Profile"],
+    "skills": ["Core Skills", "Habilidades", "Competencias", "Skills", "Habilidades Principales"],
+    "experience": ["Professional Experience", "Experiencia Laboral", "Experiencia Profesional", "Experiencia", "Experience"],
+    "education": ["Education", "Educación", "Educacion", "Formación Académica", "Formacion Academica"],
+    "certifications": ["Certifications", "Certificaciones", "Formación Complementaria", "Formacion Complementaria", "Cursos"],
+    "memberships": ["Professional Memberships", "Membresías Profesionales", "Membresias Profesionales", "Memberships", "Datos de Interés", "Datos de Interes"],
+    "languages": ["Languages", "Idiomas"],
+}
+
+
+def find_section(sections: dict, semantic: str):
+    """Return (original_name, section_data) for the first alias found, else (None, None)."""
+    for candidate in SECTION_ALIASES.get(semantic, []):
+        if candidate in sections:
+            return candidate, sections[candidate]
+    return None, None
+
 
 def get_cv_dir(args: list) -> tuple:
     """Extract --cv-dir from args, return (cv_dir, remaining_args)."""
@@ -126,10 +145,34 @@ def filter_skills_section(section_text: str, include_tags: set) -> str:
     return "\n".join(result)
 
 
-def filter_experience_bullets(section_text: str, include_tags: set) -> str:
-    """For experience, keep all jobs but reorder bullets matching tags to top."""
-    # Experience is always fully included -- tags just influence emphasis
-    return section_text
+def filter_experience_section(section_text: str, include_tags: set) -> str:
+    """Keep only jobs whose primary (first) tag is in include_tags.
+
+    A job's primary tag is the first tag in its <!-- tag:... --> comment.
+    Jobs without a tag comment are always kept (defensive default).
+    """
+    lines = section_text.splitlines()
+    indices = [i for i, line in enumerate(lines) if line.startswith("### ")]
+
+    if not indices:
+        return section_text
+
+    result = lines[:indices[0]]
+    for i, start in enumerate(indices):
+        end = indices[i + 1] if i + 1 < len(indices) else len(lines)
+        block = lines[start:end]
+
+        primary_tag = None
+        for line in block:
+            tag_match = re.match(r"<!--\s*tag:([\w,]+)\s*-->", line)
+            if tag_match:
+                primary_tag = tag_match.group(1).split(",")[0].strip()
+                break
+
+        if primary_tag is None or primary_tag in include_tags:
+            result.extend(block)
+
+    return "\n".join(result)
 
 
 def build_cv(role_config: dict, base_cv: Path) -> str:
@@ -140,17 +183,12 @@ def build_cv(role_config: dict, base_cv: Path) -> str:
     header_match = re.match(r"(.*?)(?=^## )", base_text, re.DOTALL | re.MULTILINE)
     header = header_match.group(1) if header_match else ""
 
-    # Replace the summary line in the header
-    original_summary_match = re.search(
-        r"(?<=## Professional Summary\n\n).*?(?=\n\n---)", base_text, re.DOTALL
-    )
-
     sections = parse_base_cv(base_text)
 
     # Build the output
     parts = []
 
-    # Header with swapped summary
+    # Header with swapped role title
     role_title = role_config["role"]
     new_header = re.sub(
         r"\*\*.+?\*\*",
@@ -160,14 +198,16 @@ def build_cv(role_config: dict, base_cv: Path) -> str:
     )
     parts.append(new_header.rstrip())
 
-    # Professional Summary -- use role-specific one
-    parts.append("## Professional Summary\n")
+    # Professional Summary -- preserve original section name (e.g. "Perfil Profesional")
+    summary_name, _ = find_section(sections, "summary")
+    parts.append(f"## {summary_name or 'Professional Summary'}\n")
     parts.append(role_config["summary"].strip())
     parts.append("\n---\n")
 
     # Core Skills -- filtered by tags + extra skills
-    if "Core Skills" in sections:
-        filtered = filter_skills_section(sections["Core Skills"]["content"], include_tags)
+    skills_name, skills_data = find_section(sections, "skills")
+    if skills_data:
+        filtered = filter_skills_section(skills_data["content"], include_tags)
         parts.append(filtered.rstrip())
 
         extra = role_config.get("extra_skills", [])
@@ -178,15 +218,31 @@ def build_cv(role_config: dict, base_cv: Path) -> str:
 
         parts.append("\n\n---\n")
 
-    # Experience -- always included in full
-    if "Professional Experience" in sections:
-        parts.append(sections["Professional Experience"]["content"].rstrip())
+    # Experience -- filtered: keep only jobs whose primary tag is in include_tags
+    _, exp_data = find_section(sections, "experience")
+    if exp_data:
+        filtered = filter_experience_section(exp_data["content"], include_tags)
+        parts.append(filtered.rstrip())
         parts.append("\n---\n")
 
-    # Education, Certifications, Memberships, Languages -- pass through
-    for section_name in ["Education", "Certifications", "Professional Memberships", "Languages"]:
-        if section_name in sections:
-            parts.append(sections[section_name]["content"].rstrip())
+    # Education -- pass through (all degrees stay regardless of role)
+    _, sec_data = find_section(sections, "education")
+    if sec_data:
+        parts.append(sec_data["content"].rstrip())
+        parts.append("")
+
+    # Certifications / Formación Complementaria -- filtered by tags like skills
+    _, sec_data = find_section(sections, "certifications")
+    if sec_data:
+        filtered = filter_skills_section(sec_data["content"], include_tags)
+        parts.append(filtered.rstrip())
+        parts.append("")
+
+    # Memberships / Datos de Interés and Languages -- pass through
+    for semantic in ["memberships", "languages"]:
+        _, sec_data = find_section(sections, semantic)
+        if sec_data:
+            parts.append(sec_data["content"].rstrip())
             parts.append("")
 
     # ATS keywords as hidden comment at the bottom
