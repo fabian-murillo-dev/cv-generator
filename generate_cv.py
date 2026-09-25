@@ -208,6 +208,8 @@ def build_cv(role_config: dict, base_cv: Path) -> str:
     skills_name, skills_data = find_section(sections, "skills")
     if skills_data:
         filtered = filter_skills_section(skills_data["content"], include_tags)
+        # Drop the section's trailing "---" so extra skills join the same list
+        filtered = re.sub(r"(\s*---\s*)+$", "", filtered)
         parts.append(filtered.rstrip())
 
         extra = role_config.get("extra_skills", [])
