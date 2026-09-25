@@ -20,7 +20,8 @@ Then follow the appropriate path:
 - **New person**:
   1. Ask the user to provide the base CV content (paste it or point to a file).
   2. Create `CVs/<PersonName>/` with `roles/` and `output/` subdirectories. Save the base CV as `CVs/<PersonName>/cv_base.md`.
-  3. Then ask **what position they are applying to** (job title or paste a job description).
+  3. Ask which color palette they want (see "PDF Design & Palettes") and save it as `CVs/<PersonName>/style.yaml`.
+  4. Then ask **what position they are applying to** (job title or paste a job description).
 - **Existing person**:
   1. Read their `cv_base.md` and show a brief summary (name, current title, key skills) so the user can confirm it's the right person before proceeding.
   2. Then ask **what position they are applying to** (job title or paste a job description).
@@ -65,6 +66,7 @@ CVs/                    # One folder per person
   └── <PersonName>/     # Real CVs (gitignored)
       ├── cv_base.md    # Person's master CV with tagged sections
       ├── positions.md  # Auto-generated tracker for all applied positions
+      ├── style.yaml    # PDF color palette (e.g. `palette: forest`)
       ├── roles/        # Generated .yaml configs (one per job position)
       └── output/       # Generated CVs (.md and .pdf)
 ```
@@ -134,6 +136,27 @@ The `CVs/Sample/cv_base.md` uses these tags as an example:
 - `project_management` -- project execution, vendor evaluation, FAT/SAT, commissioning, documentation
 - `software` -- SPI/INtools, AutoCAD, MATLAB, SAP PM
 - `safety_compliance` -- functional safety, HAZOP, LOPA, SIL, IEC 61511
+
+## PDF Design & Palettes
+
+`export_pdf.py` renders every CV with the same layout: job/degree title in bold with dates right-aligned, company in the accent color with location in grey, core skills in two balanced columns, and section/job headings kept together with their first lines (never orphaned at the bottom of a page).
+
+Colors come from a per-person palette set in `CVs/<PersonName>/style.yaml`:
+
+```yaml
+palette: forest
+```
+
+Available palettes (defined in `PALETTES` in `export_pdf.py`):
+- `classic` -- navy blue, neutral (default when there's no `style.yaml`)
+- `executive` -- graphite + deep navy, formal/conservative industries
+- `forest` -- deep forest green, environmental/climate/outdoors
+- `ocean` -- deep teal, fresh/modern/tech
+- `tech` -- slate + electric indigo, software/startups/developer roles
+- `burgundy` -- wine red, confident; finance/legal/hospitality
+- `terracotta` -- burnt orange, warm/youthful/creative
+
+The PDF uses core Helvetica, which only supports Latin-1: avoid em/en dashes (—, –), curly quotes and bullets (•) in `cv_base.md` and role configs. Use `-` and straight quotes instead (accented letters like á, é, ñ are fine).
 
 ## Position Tracking
 
