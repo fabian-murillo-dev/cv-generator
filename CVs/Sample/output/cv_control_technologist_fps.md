@@ -106,13 +106,6 @@ Control Systems Engineer with 8+ years of experience in electrical control syste
 
 ## Certifications
 
-<!-- tag:safety_compliance -->
-- Certified Functional Safety Engineer (CFSE) -- TUV Rheinland
-- ISA Certified Control Systems Technician (CCST Level III)
-- OSHA 30-Hour General Industry Safety
-
----
-
 ## Professional Memberships
 
 - International Society of Automation (ISA) -- Senior Member
@@ -125,5 +118,4 @@ Control Systems Engineer with 8+ years of experience in electrical control syste
 - English -- Native
 - Spanish -- Professional working proficiency
 
-<!-- ATS Keywords: P, L, C,  , p, r, o, g, r, a, m, m, i, n, g, ,,  , A, l, l, e, n, -, B, r, a, d, l, e, y, ,,  , R, o, c, k, w, e, l, l, ,,  , R, S, L, o, g, i, x, ,,  , S, t, u, d, i, o,  , 5, 0, 0, 0, ,,  , F, a, c, t, o, r, y, T, a, l, k,  , V, i, e, w, ,,  , P, o, w, e, r, F, l, e, x,  , d, r, i, v, e, s, ,,  , H, M, I, ,,  , S, C, A, D, A, ,,  , c, o, n, t, r, o, l,  , p, a, n, e, l,  , d, e, s, i, g, n, ,,  , s, c, h, e, m, a, t, i, c, s, ,,  , A, u, t, o, C, A, D, ,,  , A, u, t, o, C, A, D,  , E, l, e, c, t, r, i, c, a, l, ,,  , t, r, o, u, b, l, e, s, h, o, o, t, i, n, g, ,,  , c, o, m, m, i, s, s, i, o, n, i, n, g, ,,  , i, n, d, u, s, t, r, i, a, l,  , a, u, t, o, m, a, t, i, o, n, ,,  , f, o, o, d,  , p, r, o, c, e, s, s, i, n, g, ,,  , e, l, e, c, t, r, i, c, a, l,  , e, n, g, i, n, e, e, r, i, n, g, ,,  , c, o, n, t, r, o, l,  , s, y, s, t, e, m, s, ,,  , f, i, e, l, d,  , d, e, v, i, c, e, s, ,,  , c, u, s, t, o, m, e, r,  , s, u, p, p, o, r, t, ,,  , t, e, c, h, n, i, c, a, l,  , t, r, a, i, n, i, n, g, 
- -->
+<!-- ATS Keywords: PLC programming, Allen-Bradley, Rockwell, RSLogix, Studio 5000, FactoryTalk View, PowerFlex drives, HMI, SCADA, control panel design, schematics, AutoCAD, AutoCAD Electrical, troubleshooting, commissioning, industrial automation, food processing, electrical engineering, control systems, field devices, customer support, technical training -->

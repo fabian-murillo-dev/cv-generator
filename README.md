@@ -118,7 +118,7 @@ include_tags:
 extra_skills:
   - CI/CD pipelines
   - Cloud infrastructure (AWS)
-ats_keywords:                               # Embedded as a hidden HTML comment
+ats_keywords:                               # Hidden HTML comment; list or comma-separated string
   - full stack developer
   - React
   - Node.js
