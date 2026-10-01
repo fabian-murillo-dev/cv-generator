@@ -53,8 +53,6 @@ Instrumentation & Control Engineer with 8+ years of experience designing, config
 - SIL assessment and classification
 - Compliance: IEC 61511, IEC 61508, ISA 84, API 554, NEC/NFPA
 
----
-
 <!-- tag:role_specific -->
 - Gas facility instrumentation and control design
 - Control and system functional narratives
@@ -131,5 +129,4 @@ Instrumentation & Control Engineer with 8+ years of experience designing, config
 - English -- Native
 - Spanish -- Professional working proficiency
 
-<!-- ATS Keywords: i, n, s, t, r, u, m, e, n, t, a, t, i, o, n,  , e, n, g, i, n, e, e, r, ,,  , c, o, n, t, r, o, l,  , s, y, s, t, e, m, s, ,,  , D, C, S, ,,  , P, L, C, ,,  , H, M, I, ,,  , S, C, A, D, A, ,,  , t, e, l, e, m, e, t, r, y, ,,  , s, c, h, e, m, a, t, i, c, s, ,,  , I, /, O,  , d, r, a, w, i, n, g, s, ,,  , w, i, r, i, n, g,  , d, i, a, g, r, a, m, s, ,,  , i, n, t, e, r, c, o, n, n, e, c, t, i, o, n,  , d, r, a, w, i, n, g, s, ,,  , c, o, n, t, r, o, l,  , c, a, b, i, n, e, t,  , l, a, y, o, u, t, ,,  , P, &, I, D, ,,  , l, o, o, p,  , d, i, a, g, r, a, m, s, ,,  , c, o, m, m, i, s, s, i, o, n, i, n, g, ,,  , n, a, t, u, r, a, l,  , g, a, s, ,,  , g, a, s,  , t, r, a, n, s, m, i, s, s, i, o, n, ,,  , g, a, s,  , d, i, s, t, r, i, b, u, t, i, o, n, ,,  , p, r, e, s, s, u, r, e,  , r, e, g, u, l, a, t, i, n, g,  , s, t, a, t, i, o, n, s, ,,  , C, N, G, ,,  , L, N, G, ,,  , p, r, o, p, a, n, e, ,,  , c, o, m, p, r, e, s, s, o, r,  , s, t, a, t, i, o, n, s, ,,  , p, i, p, e, l, i, n, e, ,,  , v, a, l, v, e,  , s, t, a, t, i, o, n, s, ,,  , c, o, n, c, e, p, t, u, a, l,  , d, e, s, i, g, n, ,,  , d, e, t, a, i, l, e, d,  , d, e, s, i, g, n, ,,  , p, r, o, g, r, a, m, m, i, n, g, ,,  , c, o, n, f, i, g, u, r, a, t, i, o, n, ,,  , f, e, a, s, i, b, i, l, i, t, y,  , a, s, s, e, s, s, m, e, n, t, ,,  , f, u, n, c, t, i, o, n, a, l,  , n, a, r, r, a, t, i, v, e, s, ,,  , c, a, p, i, t, a, l,  , p, r, o, j, e, c, t, s, ,,  , C, S, A,  , c, o, d, e, s, ,,  , I, E, C,  , 6, 1, 5, 1, 1, ,,  , f, u, n, c, t, i, o, n, a, l,  , s, a, f, e, t, y, ,,  , S, I, L, ,,  , H, A, Z, O, P, ,,  , L, O, P, A, ,,  , v, e, n, d, o, r,  , e, v, a, l, u, a, t, i, o, n, ,,  , F, A, T, ,,  , S, A, T, ,,  , A, u, t, o, C, A, D, ,,  , M, S, -, P, r, o, j, e, c, t, ,,  , t, e, c, h, n, i, c, a, l,  , m, e, n, t, o, r, i, n, g, ,,  , p, r, o, f, e, s, s, i, o, n, a, l,  , e, n, g, i, n, e, e, r, 
- -->
+<!-- ATS Keywords: instrumentation engineer, control systems, DCS, PLC, HMI, SCADA, telemetry, schematics, I/O drawings, wiring diagrams, interconnection drawings, control cabinet layout, P&ID, loop diagrams, commissioning, natural gas, gas transmission, gas distribution, pressure regulating stations, CNG, LNG, propane, compressor stations, pipeline, valve stations, conceptual design, detailed design, programming, configuration, feasibility assessment, functional narratives, capital projects, CSA codes, IEC 61511, functional safety, SIL, HAZOP, LOPA, vendor evaluation, FAT, SAT, AutoCAD, MS-Project, technical mentoring, professional engineer -->

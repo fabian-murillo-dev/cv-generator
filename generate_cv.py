@@ -175,6 +175,14 @@ def filter_experience_section(section_text: str, include_tags: set) -> str:
     return "\n".join(result)
 
 
+def get_ats_keywords(role_config: dict) -> list:
+    """Return ATS keywords as a list; accepts a YAML list or a comma-separated string."""
+    ats = role_config.get("ats_keywords") or []
+    if isinstance(ats, str):
+        ats = [kw.strip() for kw in ats.split(",") if kw.strip()]
+    return ats
+
+
 def build_cv(role_config: dict, base_cv: Path) -> str:
     base_text = base_cv.read_text()
     include_tags = set(role_config.get("include_tags", []))
@@ -248,7 +256,7 @@ def build_cv(role_config: dict, base_cv: Path) -> str:
             parts.append("")
 
     # ATS keywords as hidden comment at the bottom
-    ats = role_config.get("ats_keywords", [])
+    ats = get_ats_keywords(role_config)
     if ats:
         parts.append(f"\n<!-- ATS Keywords: {', '.join(ats)} -->")
 
@@ -328,8 +336,9 @@ def main():
     print(f"Generated: {out_path}")
     print(f"Role:      {role_config['role']}")
     print(f"Tags:      {', '.join(role_config.get('include_tags', []))}")
-    if role_config.get("ats_keywords"):
-        print(f"ATS keys:  {len(role_config['ats_keywords'])} keywords embedded")
+    ats = get_ats_keywords(role_config)
+    if ats:
+        print(f"ATS keys:  {len(ats)} keywords embedded")
 
     update_positions_tracker(cv_dir, role_name, role_config)
 

@@ -53,8 +53,6 @@ Senior Electrical & Controls Engineer with 8+ years of experience leading the de
 - SIL assessment and classification
 - Compliance: IEC 61511, IEC 61508, ISA 84, API 554, NEC/NFPA
 
----
-
 <!-- tag:role_specific -->
 - Facility audits and project scoping
 - Control philosophy development and architecture design
@@ -131,5 +129,4 @@ Senior Electrical & Controls Engineer with 8+ years of experience leading the de
 - English -- Native
 - Spanish -- Professional working proficiency
 
-<!-- ATS Keywords: s, e, n, i, o, r,  , e, l, e, c, t, r, i, c, a, l,  , e, n, g, i, n, e, e, r, ,,  , c, o, n, t, r, o, l, s,  , e, n, g, i, n, e, e, r, ,,  , e, l, e, c, t, r, i, c, a, l,  , a, n, d,  , c, o, n, t, r, o, l, s, ,,  , D, C, S, ,,  , P, L, C, ,,  , H, M, I, ,,  , S, C, A, D, A, ,,  , S, I, S, ,,  , c, o, n, t, r, o, l,  , s, y, s, t, e, m, s, ,,  , i, n, s, t, r, u, m, e, n, t, a, t, i, o, n, ,,  , P, &, I, D, ,,  , c, o, n, t, r, o, l,  , p, h, i, l, o, s, o, p, h, y, ,,  , p, r, o, t, e, c, t, i, o, n,  , a, n, d,  , c, o, n, t, r, o, l, ,,  , c, o, o, r, d, i, n, a, t, i, o, n,  , s, t, u, d, i, e, s, ,,  , M, V, ,,  , L, V, ,,  , e, l, e, c, t, r, i, c, a, l,  , p, o, w, e, r,  , s, y, s, t, e, m, s, ,,  , g, r, o, u, n, d, i, n, g, ,,  , c, a, b, l, e,  , e, n, g, i, n, e, e, r, i, n, g, ,,  , r, a, c, e, w, a, y, ,,  , c, o, m, m, i, s, s, i, o, n, i, n, g, ,,  , s, t, a, r, t, -, u, p, ,,  , f, a, c, i, l, i, t, y,  , a, u, d, i, t, ,,  , p, r, o, j, e, c, t,  , s, c, o, p, i, n, g, ,,  , c, o, s, t,  , e, s, t, i, m, a, t, i, o, n, ,,  , c, l, i, e, n, t,  , r, e, c, o, m, m, e, n, d, a, t, i, o, n, s, ,,  , t, e, n, d, e, r,  , p, a, c, k, a, g, e, s, ,,  , c, o, n, s, t, r, u, c, t, i, o, n,  , p, a, c, k, a, g, e, s, ,,  , a, u, t, o, m, a, t, i, o, n, ,,  , d, i, g, i, t, a, l, i, z, a, t, i, o, n, ,,  , c, o, n, t, r, o, l,  , l, o, g, i, c, ,,  , s, y, s, t, e, m,  , i, n, t, e, g, r, a, t, i, o, n, ,,  , I, E, C,  , 6, 1, 5, 1, 1, ,,  , f, u, n, c, t, i, o, n, a, l,  , s, a, f, e, t, y, ,,  , S, I, L, ,,  , H, A, Z, O, P, ,,  , L, O, P, A, ,,  , S, R, S, ,,  , m, e, n, t, o, r, i, n, g, ,,  , t, e, c, h, n, i, c, a, l,  , l, e, a, d, e, r, s, h, i, p, ,,  , v, e, n, d, o, r,  , e, v, a, l, u, a, t, i, o, n, ,,  , F, A, T, ,,  , S, A, T, ,,  , A, l, l, e, n, -, B, r, a, d, l, e, y, ,,  , S, i, e, m, e, n, s, ,,  , H, o, n, e, y, w, e, l, l,  , E, x, p, e, r, i, o, n, ,,  , E, m, e, r, s, o, n,  , D, e, l, t, a, V, 
- -->
+<!-- ATS Keywords: senior electrical engineer, controls engineer, electrical and controls, DCS, PLC, HMI, SCADA, SIS, control systems, instrumentation, P&ID, control philosophy, protection and control, coordination studies, MV, LV, electrical power systems, grounding, cable engineering, raceway, commissioning, start-up, facility audit, project scoping, cost estimation, client recommendations, tender packages, construction packages, automation, digitalization, control logic, system integration, IEC 61511, functional safety, SIL, HAZOP, LOPA, SRS, mentoring, technical leadership, vendor evaluation, FAT, SAT, Allen-Bradley, Siemens, Honeywell Experion, Emerson DeltaV -->
