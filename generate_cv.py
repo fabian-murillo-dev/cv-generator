@@ -35,7 +35,7 @@ SECTION_ALIASES = {
     "experience": ["Professional Experience", "Experiencia Laboral", "Experiencia Profesional", "Experiencia", "Experience"],
     "education": ["Education", "Educación", "Educacion", "Formación Académica", "Formacion Academica"],
     "certifications": ["Certifications", "Certificaciones", "Formación Complementaria", "Formacion Complementaria", "Cursos"],
-    "memberships": ["Professional Memberships", "Membresías Profesionales", "Membresias Profesionales", "Memberships", "Datos de Interés", "Datos de Interes"],
+    "memberships": ["Professional Memberships", "Membresías Profesionales", "Membresias Profesionales", "Memberships", "Datos de Interés", "Datos de Interes", "Awards", "Premios"],
     "languages": ["Languages", "Idiomas"],
 }
 
